@@ -10,19 +10,19 @@ import java.util.List;
 public class TopicService {
 
     //Arrays.asList creates an immutable list, so v use ArrayList
-    private List<Topic> topics = new ArrayList<>(Arrays.asList(new Topic("spring","spring framework","spring description"),
-                                                new Topic("python","python framework","python description"),
-                                                new Topic("jpa","jpa framework","jpa description")));
+    private List<Topic> topics = new ArrayList<>(Arrays.asList(new Topic("spring", "spring framework", "spring description"),
+            new Topic("python", "python framework", "python description"),
+            new Topic("jpa", "jpa framework", "jpa description")));
 
-    public List<Topic> getAllTopics(){
+    public List<Topic> getAllTopics() {
         return topics;
     }
 
-    public Topic getTopic(String id){
-        return topics.stream().filter(e-> e.getId().equals(id)).findFirst().get();
+    public Topic getTopic(String id) {
+        return topics.stream().filter(e -> e.getId().equals(id)).findFirst().get();
     }
 
-    public void addTopic(Topic topic){
+    public void addTopic(Topic topic) {
         topics.add(topic);
     }
 
@@ -42,7 +42,7 @@ public class TopicService {
         }
     }
 
-    public void deleteTopic(String id){
+    public void deleteTopic(String id) {
         topics.removeIf(t -> t.getId().equals(id));
     }
 
